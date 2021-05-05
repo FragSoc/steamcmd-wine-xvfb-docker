@@ -1,0 +1,15 @@
+---
+
+language: minimal
+
+services:
+  - docker
+
+script:
+  - docker build -t laura7089/heat-exchanger .
+
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master
