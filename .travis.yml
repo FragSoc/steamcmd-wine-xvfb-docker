@@ -6,7 +6,7 @@ services:
   - docker
 
 script:
-  - docker build -t laura7089/heat-exchanger .
+  - docker build -t fragsoc/steamcmd-wine-xvfb .
 
 deploy:
   provider: script
