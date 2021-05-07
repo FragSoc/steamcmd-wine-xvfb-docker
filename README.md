@@ -4,8 +4,10 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/fragsoc/steamcmd-wine-xvfb?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/FragSoc/steamcmd-wine-xvfb-docker?style=flat-square)
 
-This is a minimal base image, upload to docker hub, with [wine](https://www.winehq.org/), [xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml) and [steamcmd](https://developer.valvesoftware.com/wiki/SteamCMD) installed.
+This is a minimal base image, upload to docker hub, with [wine](https://www.winehq.org/), [xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml), [tini](https://github.com/krallin/tini) and [steamcmd](https://developer.valvesoftware.com/wiki/SteamCMD) installed.
 It's intended to be used to run conventionally windows-only servers under linux inside docker containers.
+
+Note: `tini` is included because `xvfb-run` won't correctly attach stdout among other issues if run as the root process.
 
 Based on the [`steamcmd/steamcmd`](https://hub.docker.com/r/steamcmd/steamcmd) image.
 
@@ -20,5 +22,5 @@ FROM fragsoc/steamcmd-wine-xvfb
 
 # Do some setup RUN commands
 
-ENTRYPOINT ["xvfb-run", "-a", "wine", "./MyServer.exe"]
+ENTRYPOINT ["tini", "--", "xvfb-run", "-a", "wine", "./MyServer.exe"]
 ```
