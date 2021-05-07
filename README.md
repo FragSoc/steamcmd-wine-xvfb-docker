@@ -1,8 +1,8 @@
 # Basic Gameserver Wine Base Docker Image
 
-![Travis (.com)](https://img.shields.io/travis/com/FragSoc/steamcmd-wine-xvfb-docker?style=flat-square)
-![Docker Pulls](https://img.shields.io/docker/pulls/fragsoc/steamcmd-wine-xvfb?style=flat-square)
-![GitHub](https://img.shields.io/github/license/FragSoc/steamcmd-wine-xvfb-docker?style=flat-square)
+<a href="https://travis-ci.com/github/FragSoc/steamcmd-wine-xvfb-docker"><img alt="Travis (.com)" src="https://img.shields.io/travis/com/FragSoc/steamcmd-wine-xvfb-docker?style=flat-square"/></a>
+<a href="https://hub.docker.com/r/fragsoc/steamcmd-wine-xvfb"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/fragsoc/steamcmd-wine-xvfb?style=flat-square"/></a>
+<a href="https://github.com/FragSoc/steamcmd-wine-xvfb-docker"><img alt="GitHub" src="https://img.shields.io/github/license/FragSoc/steamcmd-wine-xvfb-docker?style=flat-square"/></a>
 
 This is a minimal base image, upload to docker hub, with [wine](https://www.winehq.org/), [xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml), [tini](https://github.com/krallin/tini) and [steamcmd](https://developer.valvesoftware.com/wiki/SteamCMD) installed.
 It's intended to be used to run conventionally windows-only servers under linux inside docker containers.
