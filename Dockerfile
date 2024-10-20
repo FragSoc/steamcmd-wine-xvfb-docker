@@ -32,7 +32,7 @@ RUN echo steam steam/question select "I AGREE" | debconf-set-selections && \
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update && \
     apt-get install --no-install-recommends -y \
-         wine wine32 wine64 xvfb steamcmd && \
+         wine wine32 wine64 xvfb xauth steamcmd && \
     apt-get clean
 RUN ln -s /usr/games/steamcmd /usr/bin/steamcmd
 
