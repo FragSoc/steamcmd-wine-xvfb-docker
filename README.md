@@ -26,3 +26,7 @@ CMD "./MyServer.exe"
 ```
 
 If you need to, you can override the default `ENTRYPOINT` ([`/usr/bin/launch_server`](launch_server.sh)) with your own combination of tools. 
+
+## Similar Tools
+
+- https://github.com/nuxy/docker-steamcmd-wine as recommended on the valve developer wiki.
