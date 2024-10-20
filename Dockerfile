@@ -34,6 +34,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install --no-install-recommends -y \
          wine wine32 wine64 xvfb steamcmd && \
     apt-get clean
+RUN ln -s /usr/games/steamcmd /usr/bin/steamcmd
 
 COPY launch_server.sh /usr/bin/launch_server
 RUN chmod 0755 /usr/bin/launch_server
