@@ -15,12 +15,14 @@ Based on the [`steamcmd/steamcmd`](https://hub.docker.com/r/steamcmd/steamcmd) i
 
 1. Base your docker image upon this one
 1. Perform any necessary setup
-1. Set your run command to utilise `xvfb` and `wine` to launch your executable
+1. Set your run `CMD` to the server startup command.
 
 ```dockerfile
 FROM fragsoc/steamcmd-wine-xvfb
 
-# Do some setup RUN commands
+# Do some setup RUN commands, call steamcmd etc
 
-ENTRYPOINT ["tini", "--", "xvfb-run", "-a", "wine", "./MyServer.exe"]
+CMD "./MyServer.exe"
 ```
+
+If you need to, you can override the default `ENTRYPOINT` ([`/usr/bin/launch_server`](launch_server.sh)) with your own combination of tools. 

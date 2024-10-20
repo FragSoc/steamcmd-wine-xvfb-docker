@@ -1,1 +1,4 @@
-*
+Dockerfile
+docker_push.sh
+LICENSE
+README.md
