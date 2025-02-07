@@ -32,9 +32,14 @@ RUN echo steam steam/question select "I AGREE" | debconf-set-selections && \
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update && \
     apt-get install --no-install-recommends -y \
-         wine wine32 wine64 xvfb xauth steamcmd && \
+         wine wine32 wine64 xvfb xauth steamcmd wget && \
     apt-get clean
 RUN ln -s /usr/games/steamcmd /usr/bin/steamcmd
+
+# install winetricks
+ARG WINETRICKS_VERSION=20250102
+ADD "https://raw.githubusercontent.com/Winetricks/winetricks/refs/tags/$WINETRICKS_VERSION/src/winetricks" /usr/bin/winetricks
+RUN chmod 0755 /usr/bin/winetricks
 
 COPY launch_server.sh /usr/bin/launch_server
 RUN chmod 0755 /usr/bin/launch_server
